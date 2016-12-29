@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TopTask</string>
+
+    <string name="tip">提示</string>
+
+    <string name="confirm">确定</string>
 </resources>
