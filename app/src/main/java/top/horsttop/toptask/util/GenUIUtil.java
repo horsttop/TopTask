@@ -1,10 +1,12 @@
 package top.horsttop.toptask.util;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
+import android.view.inputmethod.InputMethodManager;
 
 import top.horsttop.toptask.R;
 
@@ -88,6 +90,12 @@ public class GenUIUtil {
         if(null!=sAlertDialog&&sAlertDialog.isShowing()){
             sAlertDialog.dismiss();
             sAlertDialog = null;
+        }
+    }
+
+    public static void closeSoftInputWindow(InputMethodManager imm, Activity activity){
+        if (activity.getCurrentFocus().getWindowToken() != null) {
+            imm.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
         }
     }
 }
